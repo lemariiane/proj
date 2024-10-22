@@ -1,9 +1,10 @@
-<?php require_once 'numcar.php' ?>
+<?php 
+require_once 'numcar.php' ?>
 <?php 
 
     if(usuarioEstaLogado()) {
         echo "Está Logado";
-        header("Location:index.php");
+        header("Location: index.php");
 
     } else {
 

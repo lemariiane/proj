@@ -4,7 +4,7 @@ if(usuarioEstaLogado() == null) {
     header("Location:logininterno.php");
 } 
 
-require_once 'ClassFuncionarioDAO.php'; // Corrigindo o nome da classe
+require_once 'ClassFuncionarioDAO.php'; 
 $dao = new ClassFuncionarioDAO();
 
 $usuarios = $dao->listarUsuarios(); // Para funcionários de informática
