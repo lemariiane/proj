@@ -2,19 +2,19 @@
 <?php require_once "ClassCadastro_pacienteDAO.php";  ?>
 <?php
 
-    $nomepac = $_GET['nomepac'];  
-    $cpfpac = $_GET['cpfpac'];
-    $datanasc = $_GET['datanasc'];
-    $telefonepac = $_GET['telefonepac'];
-    $telefonepac2 = $_GET['telefonepac2'];
-    $cep = $_GET['cep'];
-    $estadopac = $_GET['estadopac'];
-    $cidadepac = $_GET['cidadepac'];
-    $bairropac = $_GET['bairropac'];
-    $ruapac = $_GET['ruapac'];
-    $numeropac = $_GET['numeropac'];
-    $pagamento = $_GET['pagamento'];
-    $ficha = $_GET['ficha'];
+    $nomepac = $_POST['nomepac'];  
+    $cpfpac = $_POST['cpfpac'];
+    $datanasc = $_POST['datanasc'];
+    $telefonepac = $_POST['telefonepac'];
+    $telefonepac2 = $_POST['telefonepac2'];
+    $cep = $_POST['cep'];
+    $estadopac = $_POST['estadopac'];
+    $cidadepac = $_POST['cidadepac'];
+    $bairropac = $_POST['bairropac'];
+    $ruapac = $_POST['ruapac'];
+    $numeropac = $_POST['numeropac'];
+    $pagamento = $_POST['pagamento'];
+    $ficha = $_POST['ficha'];
 
         
     $ClassCadastro_pacienteDAO = new ClassCadastro_pacienteDAO();

@@ -6,7 +6,11 @@
     <title>Cadastro paciente</title>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="nav.css">
-    
+    <style>
+        body{
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -16,7 +20,7 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a class="nav-link" href="index.php"><strong>Menu</strong></a></li>
                 <li class="nav-item"><a class="nav-link" href="cadastro_paciente.php"><strong>Cadastrar paciente</strong></a></li>
-                <li class="nav-item"><a class="nav-link" href="agendamento.php"><strong>Agendamento de cirurgia</strong></a></li>
+                <li class="nav-item"><a class="nav-link" href="selecionarMedico.php"><strong>Agendamento de cirurgia</strong></a></li>
             </ul>
     
             <div class="nav-ham">

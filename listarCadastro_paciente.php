@@ -211,7 +211,7 @@
         echo "<td>" . htmlspecialchars($item['ficha']) . "</td>";
         echo "<td>";
         ?> 
-        <form action="alterarCadastro_paciente.php" method="GET">
+        <form action="alterarCadastro_paciente.php"  method="POST">
             <input type="hidden" name="nomepac" value="<?php echo htmlspecialchars($item['nomepac']); ?>">
             <input type="hidden" name="cpfpac" value="<?php echo htmlspecialchars($item['cpfpac']); ?>">
             <input type="hidden" name="datanasc" value="<?php echo htmlspecialchars($item['datanasc']); ?>">

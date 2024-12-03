@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 
+
 body{
     align-items: center;
     background-image: url('img/hosp1.jpg');
     background-color: #012E40;
     color: #012E40;
+    background-size: cover;
 }
 
 header{

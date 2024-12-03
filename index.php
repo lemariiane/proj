@@ -149,7 +149,7 @@
     bottom: 0;
     width: 100%;
     background-color: #012e40d5;
-    margin-top: 11%;
+    margin-top: 14%;
     }
         
     </style>
@@ -164,7 +164,7 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a class="nav-link" href="index.php"><strong>Menu</strong></a></li>
                 <li class="nav-item"><a class="nav-link" href="cadastro_paciente.php"><strong>Cadastrar paciente</strong></a></li>
-                <li class="nav-item"><a class="nav-link" href="agendamento.php"><strong>Agendamento de cirurgia</strong></a></li>
+                <li class="nav-item"><a class="nav-link" href="selecionarMedico.php"><strong>Agendamento de cirurgia</strong></a></li>
             </ul>
     
             <div class="nav-ham">

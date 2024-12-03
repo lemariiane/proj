@@ -52,7 +52,7 @@ class ClassCadastro_pacienteDAO {
         try {
             $pdo = Conexao::getInstance();
             $sql = "UPDATE cadastro_paciente 
-                    SET nomepac =:nomepac, cpfpac =:cpfpac, datanasc =:datanasc, telefonepa c=:telefonepac,
+                    SET nomepac =:nomepac, cpfpac =:cpfpac, datanasc =:datanasc, telefonepac=:telefonepac,
                     telefonepac2 =:telefonepac2, cep =:cep, estadopac =:estadopac, cidadepac =:cidadepac,
                     bairropac =:bairropac, ruapac =:ruapac, numeropac =:numeropac, pagamento =:pagamento
                     WHERE ficha =:ficha";
@@ -94,6 +94,13 @@ class ClassCadastro_pacienteDAO {
     <title>Página Agendamento</title>
     <link rel="stylesheet" href="nav.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    <style>
+        body{
+            background-size: cover;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -104,7 +111,7 @@ class ClassCadastro_pacienteDAO {
             <ul class="nav-menu">
                 <li class="nav-item"><a class="nav-link" href="index.php"><strong>Menu</strong></a></li>
                 <li class="nav-item"><a class="nav-link" href="cadastro_paciente.php"><strong>Cadastrar paciente</strong></a></li>
-                <li class="nav-item"><a class="nav-link" href="agendamento.php"><strong>Agendamento de cirurgia</strong></a></li>
+                <li class="nav-item"><a class="nav-link" href="selecionarMedico.php"><strong>Agendamento de cirurgia</strong></a></li>
             </ul>
     
             <div class="nav-ham">

@@ -1,3 +1,17 @@
+<?php $medicoId = isset($_GET['medico']) ? $_GET['medico'] : null;
+
+function getNomeMedico($id) {
+    $medicos = [
+        1 => 'Cirurgia Geral - Dra. Cintia',
+        2 => 'Ortopedia - Dr. Leandro',
+        3 => 'Neurologia - Dr. Flavio',
+        4 => 'Pediatria - Dra. Isabela'
+    ];
+    
+    return isset($medicos[$id]) ? $medicos[$id] : 'Médico Não Encontrado';
+}
+$nomeMedico = getNomeMedico($medicoId);
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,6 +19,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="nav.css">
     <title>Agendamento</title>
+    <style>
+        
+        body{
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
 
@@ -15,7 +35,7 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a class="nav-link" href="index.php"><strong>Menu</strong></a></li>
                 <li class="nav-item"><a class="nav-link" href="cadastro_paciente.php"><strong>Cadastrar paciente</strong></a></li>
-                <li class="nav-item"><a class="nav-link" href="agendamento.php"><strong>Agendamento de cirurgia</strong></a></li>
+                <li class="nav-item"><a class="nav-link" href="selecionarMedico.php"><strong>Agendamento de cirurgia</strong></a></li>
             </ul>
     
             <div class="nav-ham">
@@ -29,7 +49,7 @@
   <main class="container">
    <form action="controleAgendamento.php" method="post">
             
-        <h1>Agendamento</h1><br><br>
+        <h1>Agendamento: <?php echo $nomeMedico; ?></h1><br><br>
 
         <div class="form-group">
             <input type="text" id="ficha" name="ficha" placeholder=" " required>
@@ -60,18 +80,6 @@
         </select>
         <div class="message"></div>
     </div>
-
-    <div class="form-group">
-            <select id="departamento" name="departamento" required>
-                <option value="">Selecione o Departamento</option>
-                <option value="cirurgia_geral" >Cirurgia Geral - Dra. Cintia</option>
-                <option value="ortopedia" >Ortopedia - Dr. Leandro</option>
-                <option value="neurologia" >Neurologia - Dr.Flavio</option>
-                <option value="pediatria" >Pediatria - Dra. Isabela</option>
-            </select>
-            <div class="message"></div>
-            <br><br>
-        </div>
 
     <div class="form-group">
         <input type="submit" value="Agendar">
@@ -126,6 +134,30 @@
         ham.classList.toggle('active');
         navMenu.classList.toggle('active');
     })
+
+    document.getElementById("ficha").addEventListener("blur", function() {
+    const ficha = this.value;
+
+    if (ficha) {
+        fetch(`buscarPaciente.php?ficha=${ficha}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.erro) {
+                    alert(data.erro);
+                    document.getElementById("nomepac").value = "";
+                    document.getElementById("telefonepac").value = "";
+                } else {
+                    document.getElementById("nomepac").value = data.nomepac;
+                    document.getElementById("telefonepac").value = data.telefonepac;
+                }
+            })
+            .catch(error => {
+                console.error("Erro:", error);
+                alert("Erro ao buscar dados do paciente.");
+            });
+    }
+});
+
 </script>
 
 </body>

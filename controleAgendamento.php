@@ -6,7 +6,7 @@
     $telefonepac = $_POST['telefonepac'];
     $datar = $_POST['datar'];
     $horario = $_POST['horario'];
-    $departamento = $_POST['departamento'];
+    $id_medico = $_POST['id_medico'];
 
 
     $novoAgendamento = new ClassAgendamento();
@@ -15,7 +15,7 @@
     $novoAgendamento->setTelefonepac($telefonepac);
     $novoAgendamento->setDatar($datar);
     $novoAgendamento->setHorario($horario);
-    $novoAgendamento->setDepartamento($departamento);
+    $novoAgendamento->setId_medico($id_medico);
     
     $ClassAgendamentoDAO = new ClassAgendamentoDAO();
     $ClassAgendamentoDAO->cadastrarAgendamento($novoAgendamento);
